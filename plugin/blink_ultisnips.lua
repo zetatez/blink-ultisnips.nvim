@@ -14,19 +14,3 @@ require("blink.cmp").setup({
   },
 })
 
--- 默认键位映射 (可在用户配置里覆盖)
-vim.keymap.set("i", "<Tab>", function()
-  if ultisnips.jumpable_forward() then
-    return ultisnips.jump_forward()
-  else
-    return "<Tab>"
-  end
-end, { expr = true, silent = true })
-
-vim.keymap.set("i", "<S-Tab>", function()
-  if ultisnips.jumpable_backward() then
-    return ultisnips.jump_backward()
-  else
-    return "<S-Tab>"
-  end
-end, { expr = true, silent = true })
