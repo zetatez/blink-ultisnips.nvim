@@ -1,11 +1,9 @@
-
 if not pcall(require, "blink.cmp") then
   return
 end
 
 local ultisnips = require("blink_ultisnips")
 
--- 注册到 blink.cmp
 require("blink.cmp").setup({
   snippet = {
     expand = function(args)
@@ -14,3 +12,17 @@ require("blink.cmp").setup({
   },
 })
 
+-- -- Tab / S-Tab 做跳转
+-- vim.keymap.set("i", "<Tab>", function()
+--   if ultisnips.jumpable_forward() then
+--     return vim.api.nvim_replace_termcodes("<Plug>(ultisnips_jump_forward)", true, true, true)
+--   end
+--   return "<Tab>"
+-- end, { expr = true, silent = true })
+
+-- vim.keymap.set("i", "<S-Tab>", function()
+--   if ultisnips.jumpable_backward() then
+--     return vim.api.nvim_replace_termcodes("<Plug>(ultisnips_jump_backward)", true, true, true)
+--   end
+--   return "<S-Tab>"
+-- end, { expr = true, silent = true })
